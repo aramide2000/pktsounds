@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKT Sounds and Events - Crowd Control Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-blue: #1a237e;
+            --light-blue: #e3f2fd;
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --dark-blue: #0d1440;
+            --gray-light: #f5f5f5;
+            --gray-medium: #e0e0e0;
+            --gray-dark: #757575;
+            --safety-orange: #ff9800;
+            --safety-yellow: #ffeb3b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(13, 20, 64, 0.9)), url('Crowd Control.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+        }
+        
+        /* Barricades Section */
+        .barricades {
+            background-color: var(--white);
+        }
+        
+        .barricades-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .barricades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .barricade-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .barricade-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .barricade-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .barricade-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .barricade-card:hover .barricade-image img {
+            transform: scale(1.1);
+        }
+        
+        .barricade-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--safety-orange);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .barricade-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .barricade-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .barricade-specs {
+            color: var(--gray-dark);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .barricade-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .feature-tag {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .safety-tag {
+            background: var(--safety-yellow);
+            color: #333;
+        }
+        
+        .barricade-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-details, .btn-rent {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .btn-details {
+            background: var(--gray-light);
+            color: var(--primary-blue);
+        }
+        
+        .btn-details:hover {
+            background: var(--gray-medium);
+            transform: translateY(-2px);
+        }
+        
+        .btn-rent {
+            background: var(--accent-red);
+            color: white;
+        }
+        
+        .btn-rent:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+        
+        /* Safety Demo Section */
+        .safety-demo {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 100px 0;
+            margin: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        .demo-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .demo-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .demo-btn.active, .demo-btn:hover {
+            background: var(--safety-orange);
+            border-color: var(--safety-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        .demo-visualization {
+            height: 500px;
+            background: #0a0a0a;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .venue-layout {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #1a1a1a;
+        }
+        
+        .stage-area {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .barricade-setup {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            z-index: 3;
+        }
+        
+        .barricade-unit {
+            width: 80px;
+            height: 40px;
+            background: var(--safety-orange);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .crowd-area {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .person {
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+        
+        .person.vip {
+            background: #9C27B0;
+        }
+        
+        .person.security {
+            background: #f44336;
+        }
+        
+        .entrance {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 30px;
+            background: var(--safety-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .entrance-left {
+            left: 100px;
+        }
+        
+        .entrance-right {
+            right: 100px;
+        }
+        
+        .safety-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        
+        .capacity-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Safety Features */
+        .safety-features {
+            background: var(--light-blue);
+            padding: 80px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-red);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .demo-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .barricades-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .barricade-image {
+                height: 250px;
+            }
+            
+            .demo-visualization {
+                height: 400px;
+            }
+            
+            .stage-area {
+                width: 250px;
+                height: 70px;
+                bottom: 80px;
+            }
+            
+            .entrance-left, .entrance-right {
+                width: 80px;
+            }
+            
+            .entrance-left {
+                left: 50px;
+            }
+            
+            .entrance-right {
+                right: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-blue);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+                margin-top: 0;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px 15px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .barricade-card {
+                margin-bottom: 20px;
+            }
+            
+            .barricade-content {
+                padding: 20px;
+            }
+            
+            .barricade-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .barricade-actions {
+                flex-direction: column;
+            }
+            
+            .demo-title {
+                font-size: 2rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .demo-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .demo-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .demo-visualization {
+                height: 300px;
+            }
+            
+            .stage-area {
+                width: 200px;
+                height: 60px;
+                bottom: 70px;
+                font-size: 0.9rem;
+            }
+            
+            .barricade-unit {
+                width: 60px;
+                height: 30px;
+                font-size: 0.7rem;
+            }
+            
+            .entrance-left, .entrance-right {
+                width: 70px;
+                font-size: 0.7rem;
+            }
+            
+            .safety-info, .capacity-display {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-column h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.7rem;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+            
+            .barricades-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .barricade-image {
+                height: 200px;
+            }
+            
+            .barricade-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .barricade-specs {
+                font-size: 0.9rem;
+            }
+            
+            .feature-tag {
+                font-size: 0.8rem;
+            }
+            
+            .demo-title {
+                font-size: 1.7rem;
+            }
+            
+            .demo-visualization {
+                height: 250px;
+            }
+            
+            .stage-area {
+                width: 150px;
+                height: 50px;
+                font-size: 0.8rem;
+            }
+            
+            .barricade-unit {
+                width: 50px;
+                height: 25px;
+                font-size: 0.6rem;
+            }
+            
+            .entrance-left, .entrance-right {
+                width: 60px;
+                height: 25px;
+                font-size: 0.6rem;
+            }
+            
+            .entrance-left {
+                left: 20px;
+            }
+            
+            .entrance-right {
+                right: 20px;
+            }
+            
+            .safety-info, .capacity-display {
+                font-size: 0.7rem;
+                padding: 5px 8px;
+            }
+            
+            .person {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .barricade-features {
+                gap: 5px;
+            }
+            
+            .feature-tag {
+                padding: 4px 8px;
+                font-size: 0.7rem;
+            }
+            
+            .demo-title {
+                font-size: 1.5rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text"><span>PKT</span> Sounds and Events</div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#barricades">Safety Solutions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Professional Crowd Control Solutions</h1>
+            <p>Crowd control barriers and safety equipment for secure and organized event management.</p>
+            <a href="#barricades" class="cta-button">Explore Safety Equipment</a>
+        </div>
+    </section>
+
+    <!-- Barricades Section -->
+    <section class="barricades" id="barricades">
+        <div class="container">
+            <div class="section-title">
+                <h2>Crowd Control Equipment</h2>
+            </div>
+            
+            <div class="barricades-intro">
+                <p>Ensure the safety and organization of your events with our professional crowd control solutions. From basic barriers to advanced safety systems, we have everything you need for secure event management.</p>
+            </div>
+            
+            <div class="barricades-grid">
+                <!-- Steel Barricades -->
+                <div class="barricade-card">
+                    <div class="barricade-image">
+                        <img src="Barricades.jpeg" alt="Steel Barricades">
+                        <div class="barricade-badge">Heavy Duty</div>
+                    </div>
+                    <div class="barricade-content">
+                        <h3>Steel Crowd Control Barricades</h3>
+                        <p class="barricade-specs">Our heavy-duty steel barricades are designed for maximum security and durability. Made from high-grade steel with reinforced connections, these barriers can withstand significant pressure while providing clear crowd management. Each 8-foot section features interlocking mechanisms for secure connections and includes reflective safety strips for high visibility.</p>
+                        <div class="barricade-features">
+                            <span class="feature-tag safety-tag">8-foot Sections</span>
+                            <span class="feature-tag safety-tag">Interlocking Design</span>
+                            <span class="feature-tag safety-tag">Reflective Strips</span>
+                            <span class="feature-tag safety-tag">Weather Resistant</span>
+                            <span class="feature-tag safety-tag">Stackable Storage</span>
+                        </div>
+                        <div class="barricade-actions">
+                            <button class="btn-details">Technical Details</button>
+                            <button class="btn-rent">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Retractable Belt System -->
+                <div class="barricade-card">
+                    <div class="barricade-image">
+                        <img src="Retractable Belt Barrier System.jpg" alt="Retractable Belt System">
+                        <div class="barricade-badge">Premium</div>
+                    </div>
+                    <div class="barricade-content">
+                        <h3>Retractable Belt Barrier System</h3>
+                        <p class="barricade-specs">Create organized queues and controlled access points with our premium retractable belt barrier system. Featuring heavy-duty bases, smooth retraction mechanisms, and high-visibility belts, this system is perfect for VIP areas, ticket lines, and entrance management. Each unit includes weighted bases for stability and easy mobility.</p>
+                        <div class="barricade-features">
+                            <span class="feature-tag safety-tag">Retractable Belts</span>
+                            <span class="feature-tag safety-tag">Weighted Bases</span>
+                            <span class="feature-tag safety-tag">High-Visibility</span>
+                            <span class="feature-tag safety-tag">Easy Mobility</span>
+                            <span class="feature-tag safety-tag">Custom Branding</span>
+                        </div>
+                        <div class="barricade-actions">
+                            <button class="btn-details">Technical Details</button>
+                            <button class="btn-rent">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Demo Section -->
+    <section class="safety-demo">
+        <div class="demo-container">
+            <h2 class="demo-title">Event Safety Planning Studio</h2>
+            <p class="demo-subtitle">Visualize different crowd control setups and see how they enhance safety and organization at your events</p>
+            
+            <div class="demo-controls">
+                <button class="demo-btn" data-effect="concert">Concert Setup</button>
+                <button class="demo-btn" data-effect="corporate">Corporate Event</button>
+                <button class="demo-btn" data-effect="festival">Festival Layout</button>
+                <button class="demo-btn active" data-effect="vip">VIP Section</button>
+            </div>
+            
+            <div class="demo-visualization">
+                <div class="venue-layout">
+                    <div class="stage-area">
+                        MAIN STAGE
+                    </div>
+                    
+                    <div class="barricade-setup" id="barricadeSetup">
+                        <!-- Barricades will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="crowd-area" id="crowdArea">
+                        <!-- Crowd will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="entrance entrance-left">
+                        ENTRANCE
+                    </div>
+                    
+                    <div class="entrance entrance-right">
+                        EXIT
+                    </div>
+                    
+                    <div class="safety-info" id="safetyInfo">
+                        Setup: VIP Section<br>
+                        Capacity: 200 people<br>
+                        Barriers: 8 units
+                    </div>
+                    
+                    <div class="capacity-display" id="capacityDisplay">
+                        Safety Level: HIGH
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button">Request Safety Consultation</a>
+        </div>
+    </section>
+
+    <!-- Safety Features Section -->
+    <section class="safety-features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Safety Features & Benefits</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Maximum Security</h3>
+                    <p>Heavy-duty construction designed to withstand crowd pressure and ensure attendee safety.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                    <h3>Flexible Configurations</h3>
+                    <p>Modular designs that can be arranged in various layouts to suit any venue or event type.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>High Visibility</h3>
+                    <p>Reflective strips and bright colors ensure barriers are visible in all lighting conditions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>Easy Transport</h3>
+                    <p>Stackable and lightweight designs for efficient transportation and storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PKT Sounds & Events</h3>
+                    <p>Your premier event equipment rental solution. We provide quality equipment and professional service for events of all sizes.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="#barricades">Safety Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Alogba Estate Ikorodu, Lagos State, Nigeria</li>
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PKT Sounds and Events. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Safety Demo Functionality
+        const demoButtons = document.querySelectorAll('.demo-btn');
+        const barricadeSetup = document.getElementById('barricadeSetup');
+        const crowdArea = document.getElementById('crowdArea');
+        const safetyInfo = document.getElementById('safetyInfo');
+        const capacityDisplay = document.getElementById('capacityDisplay');
+
+        // Setup configurations for different event types
+        const setupConfigs = {
+            concert: {
+                barricades: 12,
+                crowd: 80,
+                info: "Setup: Concert Front Stage<br>Capacity: 500 people<br>Barriers: 12 units",
+                capacity: "Safety Level: HIGH"
+            },
+            corporate: {
+                barricades: 8,
+                crowd: 40,
+                info: "Setup: Corporate Event<br>Capacity: 200 people<br>Barriers: 8 units",
+                capacity: "Safety Level: MEDIUM"
+            },
+            festival: {
+                barricades: 16,
+                crowd: 120,
+                info: "Setup: Festival Layout<br>Capacity: 1000+ people<br>Barriers: 16 units",
+                capacity: "Safety Level: HIGH"
+            },
+            vip: {
+                barricades: 6,
+                crowd: 20,
+                info: "Setup: VIP Section<br>Capacity: 50 people<br>Barriers: 6 units",
+                capacity: "Safety Level: MAXIMUM"
+            }
+        };
+
+        // Create barricades for the setup
+        function createBarricades(count) {
+            barricadeSetup.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const barricade = document.createElement('div');
+                barricade.className = 'barricade-unit';
+                barricade.textContent = 'BARRIER';
+                barricadeSetup.appendChild(barricade);
+            }
+        }
+
+        // Create crowd visualization
+        function createCrowd(count) {
+            crowdArea.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const person = document.createElement('div');
+                person.className = 'person';
+                
+                // Randomly assign some VIP and security personnel
+                if (Math.random() < 0.1) {
+                    person.classList.add('vip');
+                } else if (Math.random() < 0.05) {
+                    person.classList.add('security');
+                }
+                
+                // Random positioning
+                person.style.marginLeft = Math.random() * 10 + 'px';
+                person.style.marginRight = Math.random() * 10 + 'px';
+                
+                crowdArea.appendChild(person);
+            }
+        }
+
+        // Animate crowd movement
+        function animateCrowd() {
+            const people = document.querySelectorAll('.person');
+            people.forEach(person => {
+                // Random slight movement
+                if (Math.random() < 0.02) {
+                    person.style.transform = `translateX(${Math.random() * 20 - 10}px)`;
+                }
+            });
+        }
+
+        // Update demo based on selected setup
+        function updateDemo(setup) {
+            const config = setupConfigs[setup];
+            
+            // Update barricades
+            createBarricades(config.barricades);
+            
+            // Update crowd
+            createCrowd(config.crowd);
+            
+            // Update info displays
+            safetyInfo.innerHTML = config.info;
+            capacityDisplay.textContent = config.capacity;
+        }
+
+        demoButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                demoButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const setup = button.getAttribute('data-effect');
+                
+                // Update demo
+                updateDemo(setup);
+            });
+        });
+
+        // Initialize with VIP setup
+        window.addEventListener('load', () => {
+            demoButtons[3].click(); // Activate "VIP Section"
+            
+            // Start crowd animation
+            setInterval(animateCrowd, 100);
+        });
+
+        // Rent button functionality
+        document.querySelectorAll('.btn-rent').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Thank you for your interest! Please contact us at (+234) 813 894 6218 to discuss your crowd control equipment needs.');
+            });
+        });
+
+        // Details button functionality
+        document.querySelectorAll('.btn-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.barricade-card');
+                const title = card.querySelector('h3').textContent;
+                
+                alert(`Thank you for your interest in ${title}!\n\nOur safety specialists will provide you with detailed specifications and help you plan the perfect crowd control setup for your event. Please contact us for complete technical documentation.`);
+            });
+        });
+    </script>
+</body>
+</html>

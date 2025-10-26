@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKT Sounds and Events - Professional Audio Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-blue: #1a237e;
+            --light-blue: #e3f2fd;
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --dark-blue: #0d1440;
+            --gray-light: #f5f5f5;
+            --gray-medium: #e0e0e0;
+            --gray-dark: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(13, 20, 64, 0.9)), url('Professional Audio Solutions.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+        }
+        
+        /* Sounds Section */
+        .sounds {
+            background-color: var(--white);
+        }
+        
+        .sounds-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .sounds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .sound-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sound-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sound-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sound-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .sound-card:hover .sound-image img {
+            transform: scale(1.1);
+        }
+        
+        .sound-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-red);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .sound-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sound-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .sound-specs {
+            color: var(--gray-dark);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .sound-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .feature-tag {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .sound-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-details, .btn-rent {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .btn-details {
+            background: var(--gray-light);
+            color: var(--primary-blue);
+        }
+        
+        .btn-details:hover {
+            background: var(--gray-medium);
+            transform: translateY(-2px);
+        }
+        
+        .btn-rent {
+            background: var(--accent-red);
+            color: white;
+        }
+        
+        .btn-rent:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+        
+        /* Advanced Sound Demo Section */
+        .sound-demo {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 100px 0;
+            margin: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        .demo-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .demo-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .demo-btn.active, .demo-btn:hover {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+        }
+        
+        .demo-visualization {
+            height: 400px;
+            background: #0d1117;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        
+        .audio-visualizer {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .audio-bar {
+            width: 12px;
+            background: linear-gradient(to top, var(--accent-red), #ff9800);
+            border-radius: 6px 6px 0 0;
+            transition: height 0.1s ease;
+            box-shadow: 0 0 10px rgba(211, 47, 47, 0.3);
+        }
+        
+        .speaker {
+            position: absolute;
+            width: 150px;
+            height: 220px;
+            background: #222;
+            border-radius: 15px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 2px solid #444;
+        }
+        
+        .speaker-left {
+            left: 50px;
+        }
+        
+        .speaker-right {
+            right: 50px;
+        }
+        
+        .speaker-cone {
+            width: 100px;
+            height: 100px;
+            background: #111;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 3px solid #333;
+        }
+        
+        .speaker-cone::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+        }
+        
+        .sound-waves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .sound-wave {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+        }
+        
+        .frequency-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .volume-meter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .sound-stage {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: #1a1a1a;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-red);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .sounds-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+                gap: 30px;
+            }
+            
+            .demo-title {
+                font-size: 2.5rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--dark-blue);
+                transition: right 0.3s ease;
+                padding-top: 80px;
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: relative;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .sounds-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .sound-content h3 {
+                font-size: 1.6rem;
+            }
+            
+            .sound-actions {
+                flex-direction: column;
+            }
+            
+            .demo-title {
+                font-size: 2.2rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
+            .demo-controls {
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+            
+            .demo-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .demo-visualization {
+                height: 300px;
+                margin: 30px 0;
+            }
+            
+            .speaker {
+                width: 100px;
+                height: 150px;
+            }
+            
+            .speaker-left {
+                left: 20px;
+            }
+            
+            .speaker-right {
+                right: 20px;
+            }
+            
+            .speaker-cone {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .speaker-cone::after {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .audio-visualizer {
+                height: 200px;
+            }
+            
+            .audio-bar {
+                width: 8px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .sound-content {
+                padding: 20px;
+            }
+            
+            .sound-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .sound-image {
+                height: 220px;
+            }
+            
+            .sound-features {
+                gap: 8px;
+            }
+            
+            .feature-tag {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+            
+            .sound-demo {
+                padding: 70px 0;
+                margin: 60px 0;
+            }
+            
+            .demo-title {
+                font-size: 1.8rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            
+            .demo-controls {
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+            
+            .demo-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .demo-visualization {
+                height: 250px;
+                margin: 25px 0;
+            }
+            
+            .speaker {
+                width: 80px;
+                height: 120px;
+            }
+            
+            .speaker-left {
+                left: 10px;
+            }
+            
+            .speaker-right {
+                right: 10px;
+            }
+            
+            .speaker-cone {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .speaker-cone::after {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .audio-visualizer {
+                height: 150px;
+            }
+            
+            .audio-bar {
+                width: 6px;
+            }
+            
+            .frequency-display, .volume-meter {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .sounds-grid {
+                gap: 20px;
+            }
+            
+            .demo-title {
+                font-size: 1.6rem;
+            }
+            
+            .demo-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .demo-btn {
+                width: 200px;
+            }
+            
+            .speaker {
+                display: none; /* Hide speakers on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text"><span>PKT</span> Sounds and Events</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#sounds">Audio Solutions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Professional Audio Solutions</h1>
+            <p>High-quality PA systems, speakers, microphones, and audio equipment for crystal clear sound at any event.</p>
+            <a href="#sounds" class="cta-button">Explore Audio Equipment</a>
+        </div>
+    </section>
+
+    <!-- Sounds Section -->
+    <section class="sounds" id="sounds">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Audio Equipment</h2>
+            </div>
+            
+            <div class="sounds-intro">
+                <p>Discover our premium selection of professional audio equipment. From compact setups for intimate gatherings to powerful systems for large venues, we have the perfect audio solution for your event.</p>
+            </div>
+            
+            <div class="sounds-grid">
+                <!-- PA System -->
+                <div class="sound-card">
+                    <div class="sound-image">
+                        <img src="Line Array Pro 2000.jpeg" alt="PA System">
+                        <div class="sound-badge">Complete System</div>
+                    </div>
+                    <div class="sound-content">
+                        <h3>Line Array Pro 2000</h3>
+                        <p class="sound-specs">The Line Array Pro 2000 is our flagship portable PA system, delivering exceptional sound quality and coverage for events of up to 2000 people. This complete system includes two main line array speakers, two subwoofers, and a powered mixer with built-in effects. Perfect for concerts, corporate events, and outdoor festivals.</p>
+                        <div class="sound-features">
+                            <span class="feature-tag">2000W Total Power</span>
+                            <span class="feature-tag">Line Array Technology</span>
+                            <span class="feature-tag">Wireless Mic Ready</span>
+                            <span class="feature-tag">Built-in Effects</span>
+                            <span class="feature-tag">Portable Design</span>
+                        </div>
+                        <div class="sound-actions">
+                            <button class="btn-details">Technical Details</button>
+                            <button class="btn-rent">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Mixer -->
+                <div class="sound-card">
+                    <div class="sound-image">
+                        <img src="Digital Mixing Console 32-Channel.jpeg" alt="Digital Mixer">
+                        <div class="sound-badge">Professional Console</div>
+                    </div>
+                    <div class="sound-content">
+                        <h3>Digital Mixing Console 32-Channel</h3>
+                        <p class="sound-specs">Take complete control of your sound with our professional 32-channel digital mixing console. Featuring motorized faders, built-in effects, and intuitive touchscreen controls, this console provides complete audio management for the most demanding events. With multiple connectivity options and scene memory, it's the perfect centerpiece for any professional audio setup.</p>
+                        <div class="sound-features">
+                            <span class="feature-tag">32 Input Channels</span>
+                            <span class="feature-tag">Motorized Faders</span>
+                            <span class="feature-tag">Built-in Effects</span>
+                            <span class="feature-tag">Touchscreen Interface</span>
+                            <span class="feature-tag">Multi-Track Recording</span>
+                        </div>
+                        <div class="sound-actions">
+                            <button class="btn-details">Technical Details</button>
+                            <button class="btn-rent">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Sound Demo Section -->
+    <section class="sound-demo">
+        <div class="demo-container">
+            <h2 class="demo-title">Advanced Audio Experience Studio</h2>
+            <p class="demo-subtitle">Experience our cutting-edge audio capabilities with this interactive demo. Control different audio setups to hear how they transform your event's sound quality.</p>
+            
+            <div class="demo-controls">
+                <button class="demo-btn" data-effect="speech">Speech & Presentation</button>
+                <button class="demo-btn" data-effect="music">Live Music Performance</button>
+                <button class="demo-btn" data-effect="bass">Bass & Dance Floor</button>
+                <button class="demo-btn active" data-effect="all">Full Event Experience</button>
+            </div>
+            
+            <div class="demo-visualization">
+                <div class="sound-stage"></div>
+                
+                <div class="speaker speaker-left">
+                    <div class="speaker-cone"></div>
+                    <div class="speaker-label">Left</div>
+                </div>
+                
+                <div class="speaker speaker-right">
+                    <div class="speaker-cone"></div>
+                    <div class="speaker-label">Right</div>
+                </div>
+                
+                <div class="audio-visualizer" id="audioVisualizer">
+                    <!-- Audio bars will be generated by JavaScript -->
+                </div>
+                
+                <div class="sound-waves" id="soundWaves">
+                    <!-- Sound waves will be generated by JavaScript -->
+                </div>
+                
+                <div class="frequency-display" id="frequencyDisplay">
+                    Frequency Range: <span id="freqValue">20Hz - 20kHz</span>
+                </div>
+                
+                <div class="volume-meter" id="volumeMeter">
+                    Output Level: <span id="volumeValue">-24dB</span>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button">Book an Audio Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PKT Sounds & Events</h3>
+                    <p>Your premier event equipment rental solution. We provide quality equipment and professional service for events of all sizes.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#sounds">Audio Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Alogba Estate Ikorodu, Lagos State, Nigeria</li>
+                        
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PKT Sounds and Events. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Advanced Audio Demo Visualization
+        const demoButtons = document.querySelectorAll('.demo-btn');
+        const audioVisualizer = document.getElementById('audioVisualizer');
+        const soundWaves = document.getElementById('soundWaves');
+        const frequencyDisplay = document.getElementById('freqValue');
+        const volumeMeter = document.getElementById('volumeValue');
+        
+        // Create audio bars
+        function createAudioBars() {
+            audioVisualizer.innerHTML = '';
+            const barCount = window.innerWidth < 576 ? 30 : 50;
+            for (let i = 0; i < barCount; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'audio-bar';
+                bar.style.height = '10px';
+                audioVisualizer.appendChild(bar);
+            }
+        }
+        
+        createAudioBars();
+        let audioBars = document.querySelectorAll('.audio-bar');
+        
+        // Update audio bars on resize
+        window.addEventListener('resize', () => {
+            createAudioBars();
+            audioBars = document.querySelectorAll('.audio-bar');
+        });
+        
+        // Create sound waves
+        function createSoundWaves() {
+            soundWaves.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const wave = document.createElement('div');
+                wave.className = 'sound-wave';
+                wave.style.width = '0px';
+                wave.style.height = '0px';
+                wave.style.left = '50%';
+                wave.style.top = '50%';
+                soundWaves.appendChild(wave);
+            }
+        }
+        
+        createSoundWaves();
+        const soundWaveElements = document.querySelectorAll('.sound-wave');
+        
+        // Animate audio bars based on effect type
+        function animateAudioBars(effect) {
+            audioBars.forEach((bar, index) => {
+                // Clear any existing animation
+                clearInterval(bar.animation);
+                
+                // Set animation based on effect type
+                bar.animation = setInterval(() => {
+                    let height;
+                    let frequency;
+                    let volume;
+                    
+                    switch(effect) {
+                        case 'speech':
+                            // Speech pattern - focused on mid-range frequencies
+                            height = 20 + Math.sin(Date.now() / 600 + index * 0.2) * 15 + 
+                                    (index > 15 && index < 35 ? Math.random() * 20 : Math.random() * 5);
+                            frequency = "300Hz - 3kHz";
+                            volume = "-18dB";
+                            break;
+                        case 'music':
+                            // Music pattern - full frequency spectrum
+                            height = 30 + Math.sin(Date.now() / 200 + index * 0.15) * 40 + 
+                                    Math.sin(Date.now() / 800 + index * 0.3) * 20 + Math.random() * 15;
+                            frequency = "20Hz - 20kHz";
+                            volume = "-6dB";
+                            break;
+                        case 'bass':
+                            // Bass pattern - strong low end
+                            const bassWave = Math.sin(Date.now() / 300) * 60;
+                            height = 40 + (index < 15 ? bassWave + Math.random() * 30 : 15 + Math.random() * 10);
+                            frequency = "20Hz - 250Hz";
+                            volume = "-3dB";
+                            break;
+                        case 'all':
+                            // Full event pattern - dynamic and complex
+                            height = 25 + Math.sin(Date.now() / 250 + index * 0.25) * 35 + 
+                                    Math.sin(Date.now() / 800 + index * 0.1) * 20 + 
+                                    (index < 10 ? Math.sin(Date.now() / 150) * 25 : 0) +
+                                    Math.random() * 15;
+                            frequency = "20Hz - 20kHz";
+                            volume = "0dB";
+                            break;
+                        default:
+                            height = 20 + Math.random() * 10;
+                            frequency = "20Hz - 20kHz";
+                            volume = "-24dB";
+                    }
+                    
+                    bar.style.height = `${height}px`;
+                    frequencyDisplay.textContent = frequency;
+                    volumeMeter.textContent = volume;
+                }, 50);
+            });
+        }
+        
+        // Animate sound waves with advanced patterns
+        function animateSoundWaves() {
+            soundWaveElements.forEach((wave, index) => {
+                setTimeout(() => {
+                    wave.style.width = '0px';
+                    wave.style.height = '0px';
+                    wave.style.opacity = '0.8';
+                    wave.style.borderColor = `rgba(${100 + index * 20}, ${150 + index * 10}, ${200 + index * 5}, 0.3)`;
+                    
+                    // Animate wave expansion with different speeds
+                    let size = 0;
+                    const speed = 2 + index * 0.5;
+                    const expansion = setInterval(() => {
+                        size += speed;
+                        wave.style.width = `${size}px`;
+                        wave.style.height = `${size}px`;
+                        wave.style.opacity = `${0.8 - size/500}`;
+                        
+                        if (size > 500) {
+                            clearInterval(expansion);
+                            wave.style.opacity = '0';
+                        }
+                    }, 20);
+                }, index * 600);
+            });
+            
+            // Restart wave animation with variation
+            setTimeout(animateSoundWaves, 5000 + Math.random() * 2000);
+        }
+        
+        // Start wave animation
+        animateSoundWaves();
+        
+        demoButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                demoButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const effect = button.getAttribute('data-effect');
+                
+                // Start audio visualization for selected effect
+                animateAudioBars(effect);
+            });
+        });
+
+        // Initialize with full event audio
+        window.addEventListener('load', () => {
+            demoButtons[3].click(); // Activate "Full Event Experience"
+        });
+
+        // Rent button functionality
+        document.querySelectorAll('.btn-rent').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Thank you for your interest! Please contact us at (+234) 813 894 6218 to discuss your audio equipment needs.');
+            });
+        });
+
+        // Details button functionality
+        document.querySelectorAll('.btn-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.sound-card');
+                const title = card.querySelector('h3').textContent;
+                
+                alert(`Thank you for your interest in ${title}!\n\nOur audio specialists will provide you with detailed specifications and help you choose the perfect equipment for your event. Please contact us for complete technical documentation.`);
+            });
+        });
+    </script>
+</body>
+</html>
